@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nepali Bhawana</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 20px; }
+    textarea, select, button { width: 90%; margin: 10px 0; padding: 10px; }
+    video { width: 90%; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Nepali Bhawana</h1>
+  <p>भावनात्मक नेपाली स्क्रिप्टबाट AI भिडियो बनाउने Demo</p>
+
+  <textarea id="script" rows="5" placeholder="यहाँ स्क्रिप्ट लेख्नुहोस्..."></textarea><br/>
+  <select id="template">
+    <option value="love">प्रेम</option>
+    <option value="sad">बिछोड</option>
+    <option value="patriotic">देशभक्ति</option>
+    <option value="inspiration">प्रेरणा</option>
+  </select><br/>
+  <button onclick="generateVideo()">भिडियो देखाउनुहोस्</button>
+
+  <div id="videoContainer" style="display:none;">
+    <h2>तपाईंको भिडियो</h2>
+    <video controls id="video">
+      <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <script>
+    function generateVideo() {
+      const script = document.getElementById('script').value.trim();
+      if (!script) {
+        alert('कृपया स्क्रिप्ट लेख्नुहोस्!');
+        return;
+      }
+      document.getElementById('videoContainer').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
